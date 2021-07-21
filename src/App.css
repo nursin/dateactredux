@@ -36,3 +36,88 @@
     transform: rotate(360deg);
   }
 }
+
+body {
+  font-family: "Open Sans", sans-serif; 
+}
+
+h1, h2, h3 {
+  font-family: "Goblin One", cursive; 
+}
+
+h2 {
+  color: #2904ff; 
+}
+
+p {
+  text-indent: 50px; 
+}
+
+#slogan {
+  color: #CEC8FF; 
+}
+
+.site-footer {
+  background-image: linear-gradient(#dd37b9, #2904ff);
+  padding: 20px 0;
+  color: white; 
+}
+
+.jumbotron {
+  padding: 30px;
+  background-image: linear-gradient(to right, #dd37b9, #8a30c5, #2904ff);
+  color: white;
+  margin: 0;
+}
+
+.row-content {
+  padding: 50px 0;
+  border-bottom: 1px ridge;
+  min-height: 200px;
+}
+
+.custom-card {
+  border-width: 1rem;
+  border-radius: 3rem;
+  border-color: #8a30c5; 
+}
+
+.card-header {
+  border-radius: 2rem 2rem 0 0 !important; 
+}
+
+.button-hover-bg-gradient:hover {
+  background-image: linear-gradient(to right, #dd37b9, #8a30c5, #2904ff); 
+}
+
+.bg-blue {
+  background-color: #2904ff; }
+
+.bg-pink {
+  background-color: #dd37b9; }
+
+.bg-gradient {
+  background-image: linear-gradient(to right, #dd37b9, #8a30c5, #2904ff);
+}
+
+.navbar {
+  background-color: #8a30c5; 
+}
+
+#logo:hover {
+  color: #2904ff; 
+}
+
+#logo {
+  color: white; 
+}
+
+.close {
+  color: #fff; 
+  opacity: 1;
+}
+
+.close:hover {
+  color: rgb(255, 255, 255); 
+  opacity: 1;
+}
