@@ -7,3 +7,7 @@ export const printHello = () => ({
 export const printBye = () => ({
   type: ActionTypes.BYE
 })
+
+export const renderChooseForm = () => ({
+  type: ActionTypes.LOAD_CHOOSE_FORM
+})

@@ -25,7 +25,8 @@
     "redux-thunk": "2.3.0",
     "typeface-goblin-one": "^1.1.13",
     "typeface-open-sans": "^1.1.13",
-    "web-vitals": "^1.0.1"
+    "web-vitals": "^1.0.1",
+    "react-html-parser": "^2.0.2"
   },
   "scripts": {
     "start": "react-scripts start",
