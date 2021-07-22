@@ -10,8 +10,7 @@ import { renderChooseForm } from '../redux/ActionCreators';
 
 const mapStateToProps = (state) => {
   return {
-    Greeting: state.Greeting,
-    GameCardHeader: state.GameCardHeader
+    GameCard: state.GameCard
   }
 }
 
@@ -23,36 +22,33 @@ const mapDispatchToProps = {
 //   renderChooseForm();
 // }
 
+// remove data for a generic card where info will change upon button clicks
+function RenderCard({ item, nextPage }) {
+  return (
+    <Card className="card custom-card">
+      <CardHeader className="bg-gradient" >
+        <h3 className="text-center text-white" >{item.CardHeader}</h3>
+      </CardHeader>
+      <CardBody>
+        {item.CardBody}
+        <Link type="button" onClick={() => nextPage.renderChooseForm()} className="col btn btn-lg text-white bg-blue button-hover-bg-gradient">{item.CardButton}
+        </Link>
+      </CardBody>
+    </Card>
+  );
+}
+
+
 function Home(props) {
-
-
-  // remove data for a generic card where info will change upon button clicks
-  function RenderCard() {
-    console.log(props)
-    return(
-
-        <Card className="card custom-card">
-          <CardHeader className="bg-gradient" >
-          <h3 className="text-center text-white" >{props.GameCardHeader.CardHeader}</h3>
-          </CardHeader>
-          <CardBody>
-            {props.GameCardHeader.CardBody}
-            <Link type="button" onClick={() => props.renderChooseForm()} className="col btn btn-lg text-white bg-blue button-hover-bg-gradient">Start 
-            </Link>
-          </CardBody>
-        </Card>
-
-    );
-  }
-  
+  console.log(props)
   return (
     <div className="container">
       <div className="row row-content">
         <div className="col">
-          <RenderCard />
+          <RenderCard item={props.GameCard} nextPage={props}/>
         </div>
       </div>
-    </div> 
+    </div>
   );
 }
 

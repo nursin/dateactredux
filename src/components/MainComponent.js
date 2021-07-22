@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import { Switch, Route, Redirect } from 'react-router-dom';
 
 // action creators
-import { printHello, printBye } from '../redux/ActionCreators';
+
 
 // components
 import Header from './HeaderComponent'
@@ -19,13 +19,12 @@ import Footer from './FooterComponent';
 
 const mapStateToProps = (state) => {
   return {
-    Greeting: state.Greeting
+
   }
 }
 
 const mapDispatchToProps = {
-  printHello, 
-  printBye
+
 }
 
 class Main extends Component {

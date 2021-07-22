@@ -9,13 +9,12 @@ import { POSITIVE_ADJECTIVE_LIST, NEGATIVE_ADJECTIVE_LIST} from '../shared/adjec
 import { QUIRKY_FACT } from '../shared/quirky-fact';
 import { PROFESSION } from '../shared/profession';
 import { FAMOUS_FEMALES, FAMOUS_MALES, FAMOUS_UNISEX } from '../shared/famous';
-import { Greeting, GameCardHeader } from './cardReducer';
+import { GameCard } from './cardReducer';
 
 export const ConfigureStore = () => {
   const store = createStore(
     combineReducers({
-      Greeting: Greeting,
-      GameCardHeader: GameCardHeader
+      GameCard: GameCard
     }),
     applyMiddleware(thunk, logger)
   );
