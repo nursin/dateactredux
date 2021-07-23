@@ -2,7 +2,15 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import { generateProfile } from '../shared/functions';
 import { Breadcrumb, BreadcrumbItem } from 'reactstrap';
+import { connect } from 'react-redux';
 var randomFamousPerson = 1;
+
+const mapStateToProps = state => {
+  return {
+    formValues: state.formValues
+  }
+}
+
 class Profile extends Component {
 
   randomFamousPerson() {
@@ -53,4 +61,4 @@ class Profile extends Component {
   }
 }
 //restart
-export default Profile;
+export default connect(mapStateToProps)(Profile);

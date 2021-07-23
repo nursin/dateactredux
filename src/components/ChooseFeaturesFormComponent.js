@@ -2,6 +2,18 @@ import React, { Component } from 'react';
 import { Card, CardHeader, CardBody, Label, Button } from 'reactstrap';
 import { Redirect } from 'react-router-dom';
 import { Control, LocalForm} from 'react-redux-form';
+import { selectedChooseFormValues } from '../redux/ActionCreators';
+import { connect } from 'react-redux';
+
+const mapStateToProps = state => {
+  return {
+    formValues: state.formValues
+  }
+}
+
+const mapDispatchToProps = {
+  selectedChooseFormValues
+};
 
 class RenderChooseFeaturesForm extends Component {
   constructor(props) {
@@ -22,11 +34,13 @@ class RenderChooseFeaturesForm extends Component {
     this.setState({
       changePage: true
     })
+    this.props.selectedChooseFormValues(values)
+    console.log('after change',this)
   }
 
   redirectToProfile() {
     // console.log(this.props.data.formValues.charType)
-    if (this.state.changePage) {
+    if (this.state.changePage && this.props.formValues.formValues.charType === 'createYourOwn') {
       console.log('hi')
       this.setState({
         changePage: false
@@ -103,4 +117,4 @@ class RenderChooseFeaturesForm extends Component {
   }
 }
 
-export default RenderChooseFeaturesForm;
+export default connect(mapStateToProps, mapDispatchToProps)(RenderChooseFeaturesForm);

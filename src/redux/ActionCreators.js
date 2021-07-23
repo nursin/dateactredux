@@ -1,5 +1,6 @@
 import * as ActionTypes from './ActionTypes'
 
-export const toggleRedirect = () => ({
-  type: ActionTypes.TOGGLE_REDIRECT
-})
+export const selectedChooseFormValues = (formValues) => ({
+  type: ActionTypes.SELECTED_CHOOSE_FORM_VALUES,
+  payload: formValues
+});
