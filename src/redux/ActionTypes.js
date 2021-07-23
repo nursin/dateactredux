@@ -1,6 +1,5 @@
-export const LOAD_HOME_CARD_HEADER = 'LOAD_HOME_CARD_HEADER';
-export const LOAD_CHOOSE_FORM = 'LOAD_CHOOSE_FORM';
-export const LOAD_PROFILE = 'LOAD_PROFILE';
+export const TOGGLE_REDIRECT = 'TOGGLE_REDIRECT';
+
 
 
 

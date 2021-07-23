@@ -12,9 +12,9 @@ import Home from './HomeComponent';
 import About from './AboutComponent';
 import Contact from './ContactComponent';
 import Footer from './FooterComponent';
-// import RenderChooseFeaturesForm from './ChooseFeaturesFormComponent';
-// import CreateChar from './CreateCharFormComponent';
-// import Profile from './ProfileReadyComponent';
+import RenderChooseFeaturesForm from './ChooseFeaturesFormComponent';
+import CreateChar from './CreateCharFormComponent';
+import Profile from './ProfileReadyComponent';
 
 
 const mapStateToProps = (state) => {
@@ -50,35 +50,34 @@ class Main extends Component {
       );
     }
 
-    // const ChooseFeaturesFormPage = () => {
-    //   return (
-    //     <RenderChooseFeaturesForm data={this.state} setChanged={this.setChanged}/>
-    //   );
-    // }
+    const ChooseFeaturesFormPage = () => {
+      return (
+        <RenderChooseFeaturesForm />
+      );
+    }
 
-    // const CreateCharFormPage = () => {
-    //   return (
-    //     <CreateChar data={this.state} setChanged={this.setChanged}/>
-    //   );
-    // }
+    const CreateCharFormPage = () => {
+      return (
+        <CreateChar />
+      );
+    }
     
-    // const ProfileReadyComponentPage = () => {
-    //   return (
-    //     <Profile />
-    //   );
-    // }
+    const ProfileReadyComponentPage = () => {
+      return (
+        <Profile />
+      );
+    }
 
     return (
       <div>
         <Header />
         <Switch>
-          <Route path='/home' component={HomePage} />
+          <Route exact path='/home' component={HomePage} />
           <Route path='/aboutus' component={AboutPage} />
           <Route path='/contactus' component={ContactPage} />
-          {/* <Route path='/choosefeaturesform' component={ChooseFeaturesFormPage} />
-          <Route path='/createchar' component={CreateCharFormPage} />
-          <Route path='/profileready' component={ProfileReadyComponentPage} /> */}
-          <Route path='/restart' component={HomePage} />
+          <Route path='/home/choosefeaturesform' component={ChooseFeaturesFormPage} />
+          <Route path='/home/createchar' component={CreateCharFormPage} />
+          <Route path='/home/profileready' component={ProfileReadyComponentPage} />
           <Redirect to='/home' />
         </Switch>
         <Footer />
