@@ -2,6 +2,19 @@ import React, { Component } from 'react';
 import { Card, CardHeader, CardBody, Label, Button, Breadcrumb, BreadcrumbItem } from 'reactstrap';
 import { Link, Redirect } from 'react-router-dom';
 import { Control, LocalForm } from 'react-redux-form';
+import { selectedCreateCharValues } from '../redux/ActionCreators';
+import { connect } from 'react-redux';
+
+const mapStateToProps = state => {
+  return {
+    formValues: state.formValues,
+    createFormValues: state.createFormValues
+  }
+}
+
+const mapDispatchToProps = {
+  selectedCreateCharValues
+};
 
 class CreateChar extends Component {
   constructor(props) {
@@ -26,6 +39,7 @@ class CreateChar extends Component {
     this.setState({
       changePage: true
     })
+    this.props.selectedCreateCharValues(values);
     // this.props.setChanged(values);
 
 
@@ -47,7 +61,7 @@ class CreateChar extends Component {
   }
 
   render() {
-    // console.log("Data", this.props.data)
+    console.log("Data", this.props)
     return (
       <div className="container">
         <div className="row mb-5">
@@ -119,4 +133,4 @@ class CreateChar extends Component {
   }
 }
 
-export default CreateChar;
+export default connect(mapStateToProps, mapDispatchToProps)(CreateChar);

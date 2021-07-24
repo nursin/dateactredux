@@ -30,7 +30,6 @@ const mapDispatchToProps = {
 class Main extends Component {
 
   render() {
-    console.log('data', this.props)
 
     const HomePage = () => {
       return (

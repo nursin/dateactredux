@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 // action creators
 
 // remove data for a generic card where info will change upon button clicks
-function RenderCard({ item, nextPage }) {
+function RenderCard() {
   return (
     <Card className="card custom-card">
       <CardHeader className="bg-gradient" >
@@ -22,8 +22,7 @@ function RenderCard({ item, nextPage }) {
 }
 
 
-function Home(props) {
-  console.log(props)
+function Home() {
   return (
     <div className="container">
       <div className="row row-content">

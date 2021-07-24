@@ -1,8 +1,21 @@
 import React, { Component } from 'react';
+import { selectedContactFormValues } from '../redux/ActionCreators';
+import { connect } from 'react-redux';
+
+const mapStateToProps = state => {
+  return {
+    contactFormValues: state.contactFormValues
+  }
+}
+
+const mapDispatchToProps = {
+  selectedContactFormValues
+};
 
 class Contact extends Component {
 
   render() {
+    console.log(this.props)
     return (
       <div className="container">
         <div className="row mt-4">
@@ -81,4 +94,4 @@ class Contact extends Component {
   }
 }
 
-export default Contact;
+export default connect(mapStateToProps, mapDispatchToProps)(Contact);

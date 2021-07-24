@@ -27,27 +27,24 @@ class RenderChooseFeaturesForm extends Component {
   }
 
   handleSubmit (values) {
-    console.log("Current state is: " + JSON.stringify(values));
-    console.log("Gender:", values.charGender)
-    console.log("Age:", values.charAge) 
-    console.log("Type:", values.charType)
+    // console.log("Current state is: " + JSON.stringify(values));
+    // console.log("Gender:", values.charGender)
+    // console.log("Age:", values.charAge) 
+    // console.log("Type:", values.charType)
     this.setState({
       changePage: true
     })
     this.props.selectedChooseFormValues(values)
-    console.log('after change',this)
   }
 
   redirectToProfile() {
     // console.log(this.props.data.formValues.charType)
     if (this.state.changePage && this.props.formValues.formValues.charType === 'createYourOwn') {
-      console.log('hi')
       this.setState({
         changePage: false
       })
       return <Redirect to='/home/createchar' />
     } else if (this.state.changePage){
-      console.log('ho')
       this.setState({
         changePage: false
       })
@@ -56,7 +53,6 @@ class RenderChooseFeaturesForm extends Component {
   }
 
   render() {
-    console.log(this)
     return (
       <div className='container'>
         <div className='row row-content'>

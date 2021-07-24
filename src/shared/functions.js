@@ -1,13 +1,13 @@
-export function generateProfile(charType, charData, attributeToShow, randomFamousPerson) {
+export function generateProfile(charType, charData, formValues, attributeToShow, randomFamousPerson) {
   // console.log("CharData",charData)
   var gender;
   if (charType === 'famous'){
     // run famous profile
-    if (charData.formValues.charGender === 'male') {
+    if (formValues.formValues.charGender === 'male') {
       gender = charData.famousMales;
-    } else if (charData.formValues.charGender === 'female') {
+    } else if (formValues.formValues.charGender === 'female') {
       gender = charData.famousFemales;
-    } else if (charData.formValues.charGender === 'androgen' || charData.formValues.charGender === 'neutral') {
+    } else if (formValues.formValues.charGender === 'androgen' || formValues.formValues.charGender === 'neutral') {
       gender = charData.famousUnisex;
     } else {
       gender = [...charData.famousMales, ...charData.famousFemales, ...charData.famousUnisex];
@@ -33,9 +33,9 @@ export function generateProfile(charType, charData, attributeToShow, randomFamou
   } else if (charType === 'notFamous'){
     // run notfamous profile random selection profile
     if (attributeToShow === 'name'){
-      return generateName(charData.formValues.charGender, charData.maleNames, charData.femaleNames, charData.unisexNames, charData.lastNames)
+      return generateName(formValues.charGender, charData.maleNames, charData.femaleNames, charData.unisexNames, charData.lastNames)
     } else if (attributeToShow === 'age'){
-      return generateAge(charData.formValues.charAge)
+      return generateAge(formValues.charAge)
     } else if (attributeToShow === 'horoscope'){
       return randomHoroscope(charData.horoscopes)
     } else if (attributeToShow === 'type'){
@@ -52,28 +52,28 @@ export function generateProfile(charType, charData, attributeToShow, randomFamou
   } else if (charType === 'createYourOwn') {
     // create your own profile form appears
     if (attributeToShow === 'name'){
-      return charData.profile.name
+      return formValues.createFormValues.createName
     } else if (attributeToShow === 'age'){
-      return charData.profile.age
+      return formValues.createFormValues.createAge
     } else if (attributeToShow === 'horoscope'){
-      return charData.profile.horoscope
+      return formValues.createFormValues.createHoroscope
     } else if (attributeToShow === 'type'){
       return 'Create your own'
     } else if (attributeToShow === 'bio'){
-      return charData.profile.bio
+      return formValues.createFormValues.createBio
     } else if (attributeToShow === 'adjectives'){
-      return charData.profile.adjectives
+      return formValues.createFormValues.createAdjectives
     } else if (attributeToShow === 'quirkyFact'){
-      return charData.profile.quirkyFact
+      return formValues.createFormValues.createQuirkyFact
     } else if (attributeToShow === 'profession'){
-      return charData.profile.profession
+      return formValues.createFormValues.createProfession
     }
   } else {
     // if no selection on type run notfamous
     if (attributeToShow === 'name'){
-      return generateName(charData.formValues.charGender, charData.maleNames, charData.femaleNames, charData.unisexNames, charData.lastNames)
+      return generateName(formValues.charGender, charData.maleNames, charData.femaleNames, charData.unisexNames, charData.lastNames)
     } else if (attributeToShow === 'age'){
-      return generateAge(charData.formValues.charAge)
+      return generateAge(formValues.charAge)
     } else if (attributeToShow === 'horoscope'){
       return randomHoroscope(charData.horoscopes)
     } else if (attributeToShow === 'type'){
