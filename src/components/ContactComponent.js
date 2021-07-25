@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { selectedContactFormValues } from '../redux/ActionCreators';
 import { Card, CardHeader, CardBody, Label, Button } from 'reactstrap';
-import { Control, LocalForm } from 'react-redux-form';
+import { Control, Form, actions } from 'react-redux-form';
 import { connect } from 'react-redux';
 
 const mapStateToProps = state => {
@@ -11,7 +11,8 @@ const mapStateToProps = state => {
 }
 
 const mapDispatchToProps = {
-  selectedContactFormValues
+  selectedContactFormValues,
+  resetFeedbackForm: () => (actions.reset('feedbackForm'))
 };
 
 class Contact extends Component {
@@ -37,6 +38,7 @@ class Contact extends Component {
 
     alert(`Thanks ${values.firstName} ${values.lastName} for submitting phone #: ${values.phoneNum}, email: ${values.email}, and feedback: ${values.feedback}. You ${values.agree ? 'agree' : 'dont agree'} to be contacted.`)
     console.log(this.props)
+    this.props.resetFeedbackForm();
   }
 
   render() {
@@ -54,7 +56,7 @@ class Contact extends Component {
             <Card className="custom-card">
               <CardHeader className="bg-gradient"><h3 className="text-white text-center mt-1" >Send us your feedback</h3></CardHeader>
               <CardBody>
-                <LocalForm onSubmit={values => this.handleSubmit(values)}>
+                <Form model="feedbackForm" onSubmit={values => this.handleSubmit(values)}>
                   <div className="form-group">
                     <Label htmlFor="firstName">First Name</Label>
                     {/* eslint-disable-next-line */}
@@ -97,7 +99,7 @@ class Contact extends Component {
                     </Control.textarea>
                   </div>
                   <Button type='submit' className="btn btn-primary bg-blue button-hover-bg-gradient col">Send Feedback</Button>
-                </LocalForm>
+                </Form>
               </CardBody>
             </Card>
           </div>

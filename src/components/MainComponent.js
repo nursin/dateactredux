@@ -77,7 +77,7 @@ class Main extends Component {
           <Route path='/home/choosefeaturesform' component={ChooseFeaturesFormPage} />
           <Route path='/home/createchar' component={CreateCharFormPage} />
           <Route path='/home/profileready' component={ProfileReadyComponentPage} />
-          <Redirect to='/home' />
+          <Redirect to='/' />
         </Switch>
         <Footer />
       </div>
