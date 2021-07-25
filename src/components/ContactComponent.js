@@ -81,6 +81,7 @@ class Contact extends Component {
                   </div>
                   <div className="form-group">
                     <Label check>
+                      {/* eslint-disable-next-line */}
                       <Control.checkbox 
                         model=".agree"
                         name="agree"
