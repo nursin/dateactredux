@@ -7,7 +7,7 @@ import { PROFESSION } from '../shared/profession';
 import { FAMOUS_FEMALES, FAMOUS_MALES, FAMOUS_UNISEX } from '../shared/famous';
 
 //types
-import * as ActionTypes from './ActionTypes'
+// import * as ActionTypes from './ActionTypes'
 
 //data
 
