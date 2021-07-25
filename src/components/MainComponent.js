@@ -1,7 +1,7 @@
 //dependencies
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { Switch, Route, Redirect } from 'react-router-dom';
+import { Switch, Route, Redirect, withRouter } from 'react-router-dom';
 
 // action creators
 
@@ -85,4 +85,4 @@ class Main extends Component {
   }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(Main);
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(Main));
