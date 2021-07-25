@@ -46,7 +46,7 @@ class Header extends Component {
         </Jumbotron>
         <Navbar dark sticky="top" expand="md">
           <div className="container">
-            <NavbarToggler onClick={this.toggleNav} />
+            <NavbarToggler onClick={this.toggleNav} onBlur={this.toggleNav}/>
             <Collapse isOpen={this.state.isNavOpen} navbar>
               <Nav navbar>
                 <NavItem>
