@@ -35,7 +35,7 @@ export function generateProfile(charType, charData, formValues, attributeToShow,
     if (attributeToShow === 'name'){
       return generateName(formValues.charGender, charData.maleNames, charData.femaleNames, charData.unisexNames, charData.lastNames)
     } else if (attributeToShow === 'age'){
-      return generateAge(formValues.charAge)
+      return generateAge(formValues.formValues.charAge)
     } else if (attributeToShow === 'horoscope'){
       return randomHoroscope(charData.horoscopes)
     } else if (attributeToShow === 'type'){
@@ -73,7 +73,7 @@ export function generateProfile(charType, charData, formValues, attributeToShow,
     if (attributeToShow === 'name'){
       return generateName(formValues.charGender, charData.maleNames, charData.femaleNames, charData.unisexNames, charData.lastNames)
     } else if (attributeToShow === 'age'){
-      return generateAge(formValues.charAge)
+      return generateAge(formValues.formValues.charAge)
     } else if (attributeToShow === 'horoscope'){
       return randomHoroscope(charData.horoscopes)
     } else if (attributeToShow === 'type'){

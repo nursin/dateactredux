@@ -29,6 +29,7 @@ class Profile extends Component {
   }
 
   render() {
+    console.log('profile', this.props.formValues.formValues.charAge)
     this.randomFamousPerson();
     return (
       <div className="container">
