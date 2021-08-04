@@ -425,18 +425,6 @@ export const PROFESSION = [
 },
 {
   id: 0,
-  profession: 'vengeful'
-},
-{
-  id: 0,
-  profession: 'vulgar'
-},
-{
-  id: 0,
-  profession: 'weak-willed'
-},
-{
-  id: 0,
   profession: 'Accountant'
 },
 {
